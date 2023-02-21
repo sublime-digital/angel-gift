@@ -1,2 +1,42 @@
+
+<nav class="red-navbar navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="mission">
+      <i class="bi bi-pencil-square mr-3"></i>
+      <img src="./assets/ag-logo-dark-teal.png" width="70px" id="ag" >
+    </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="mission">Our Mission</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="give">Give a Gift</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="share">Spread the Word</a>
+        </li>
+        <li class="nav settings-icon">
+          <a class="nav-link" routerLink="settings">
+            <span class="material-symbols-outlined">
+              settings
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <router-outlet></router-outlet>
 
+
+
+<nav class="red-navbar navbar fixed-bottom navbar-dark bg-light text-right">
+  <div class="container">
+    <div class="navbar-brand copyright">Copyright © 2023 AngelGift.io</div>
+    </div>
+</nav>

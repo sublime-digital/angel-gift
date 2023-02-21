@@ -1,16 +1,9 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "baseUrl": "./",
     "outDir": "./out-tsc/app",
-    "types": ["node"],
-    "paths": {
-      "@youpez/*": [
-        "src/@youpez/*"
-      ]
-    }
+    "types": []
   },
   "files": [
     "src/main.ts",
@@ -18,5 +11,5 @@
   ],
   "include": [
     "src/**/*.d.ts"
-  ],
+  ]
 }
