@@ -10,3 +10,8 @@ border-radius: 25px;
 .link {
     color: cyan;
 }
+
+.share {
+    color: white;
+    width: 3em;
+}

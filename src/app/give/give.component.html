@@ -1,6 +1,44 @@
-<div class="container">
-  <div class="row">
-    <h1>Give</h1>
-  </div>
 
+<div class="container">
+  <p><p>
+  <h1 class="text">Even a $10 gift is generous,
+  <br>but you can give more if you'd like</h1>&nbsp;
+  <p><p>
+  <button class="btn btn-primary btn1" (click)="tendollars=true">Give $10</button>
+  &nbsp;
+  <button class="btn btn-info" (click)="tendollars=false">Give Custom Amount</button>
+  <div class="tendollars" *ngIf="tendollars else customamount">
+    <h1>$10</h1>
+    <p><p>
+      <i class="payicon fa-brands fa-cc-paypal fa-2xl"></i>
+      &nbsp;<img class="venmo" src="../assets/venmo.ico" alt="">
+  </div>
+  <ng-template #customamount>
+    <div class="row badmoods">
+    <p><div>
+        <div class="col-md-2">
+        <p><label for="customRange1" class="form-label">Water Bottle</label>
+        <br><input type="range" class="form-range" id="customRange1">
+        <p><label for="customRange1" class="form-label">Boots</label>
+        <br><input type="range" class="form-range" id="customRange1">
+        <p><label for="customRange1" class="form-label">Coats</label>
+        <br><input type="range" class="form-range" id="customRange1">
+        <p><label for="customRange1" class="form-label">Snacks</label>
+        <br><input type="range" class="form-range" id="customRange1">
+        <p><label for="customRange1" class="form-label">Tents</label>
+        <br><input type="range" class="form-range" id="customRange1">
+        <p><label for="customRange1" class="form-label">Medicine</label>
+        <br><input type="range" class="form-range" id="customRange1">
+        <p><label for="customRange1" class="form-label">Toys</label>
+        <br><input type="range" class="form-range" id="customRange1">
+        <p><label for="customRange1" class="form-label">Books</label>
+        <br><input type="range" class="form-range" id="customRange1">
+      </div>
+    </div>
+    <p>
+    </div>
+      <h1>Total Gift Amount: {{total}}</h1>
+      <i class="payicon fa-brands fa-cc-paypal fa-2xl"></i>
+      &nbsp;<img class="venmo" src="../assets/venmo.ico" alt="">
+  </ng-template>
 </div>

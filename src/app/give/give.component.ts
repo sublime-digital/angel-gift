@@ -11,5 +11,8 @@ export class GiveComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  tendollars = true;
+  total = "$50";
 }
 
