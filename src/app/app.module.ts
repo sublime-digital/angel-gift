@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { MissionComponent } from './mission/mission.component';
 import { GiveComponent } from './give/give.component';
 import { ShareComponent } from './share/share.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ShareComponent } from './share/share.component';
     MissionComponent,
     GiveComponent,
     ShareComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
