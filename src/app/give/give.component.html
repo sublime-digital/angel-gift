@@ -12,33 +12,120 @@
     <p><p>
       <i class="payicon fa-brands fa-cc-paypal fa-2xl"></i>
       &nbsp;<img class="venmo" src="../assets/venmo.ico" alt="">
+      <p><p><google-pay-button
+        environment="TEST"
+        buttonType="buy"
+        buttonColor="black"
+        [paymentRequest]="{
+          apiVersion: 2,
+          apiVersionMinor: 0,
+          allowedPaymentMethods: [
+            {
+              type: 'CARD',
+              parameters: {
+                allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD']
+              },
+              tokenizationSpecification: {
+                type: 'PAYMENT_GATEWAY',
+                parameters: {
+                  gateway: 'example',
+                  gatewayMerchantId: 'exampleGatewayMerchantId'
+                }
+              }
+            }
+          ],
+          merchantInfo: {
+            merchantId: '12345678901234567890',
+            merchantName: 'Demo Merchant'
+          },
+          transactionInfo: {
+            totalPriceStatus: 'FINAL',
+            totalPriceLabel: 'Total',
+            totalPrice: '100.00',
+            currencyCode: 'USD',
+            countryCode: 'US'
+          }
+        }"
+        (loadpaymentdata)="onLoadPaymentData($event)"
+      ></google-pay-button>
   </div>
   <ng-template #customamount>
-    <div class="row badmoods">
-    <p><div>
-        <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Water Bottle</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Boots</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Coats</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Snacks</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Tents</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Medicine</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Toys</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Books</label>
-        <br><input type="range" class="form-range" id="customRange1">
-      </div>
+
+
+    <div class="container">
+  <div class="row">
+    <div class="col-sm">
+        <h1><p><label for="customRange1" class="form-label">Water Bottle: {{watercount}}</label></h1>
+        <br><input [(ngModel)]="watercount" type="range" min="1" max="100" class="form-range" id="customRange1">
+        <h1><p><label for="customRange1" class="form-label">Pair of Boots: {{bootcount}}</label></h1>
+        <br><input [(ngModel)]="bootcount" type="range" min="1" max="100" class="form-range" id="customRange1">
+        <h1><p><label for="customRange1" class="form-label">Warm Coat: {{coatcount}}</label></h1>
+        <br><input [(ngModel)]="coatcount" type="range" min="1" max="100" class="form-range" id="customRange1">
+        <h1><p><label for="customRange1" class="form-label">Protein Drink: {{drinkcount}}</label></h1>
+        <br><input [(ngModel)]="drinkcount" type="range" min="1" max="100" class="form-range" id="customRange1">
     </div>
-    <p>
+    <div class="col-sm">
+        <h1><p><label for="customRange1" class="form-label">Tents: {{tentcount}}</label></h1>
+        <br><input [(ngModel)]="tentcount" type="range" min="1" max="100" class="form-range" id="customRange1">
+        <h1><p><label for="customRange1" class="form-label">First Aid Kit: {{firstaidcount}}</label></h1>
+        <br><input [(ngModel)]="firstaidcount" type="range" min="1" max="100" class="form-range" id="customRange1">
+        <h1><p><label for="customRange1" class="form-label">Toys: {{toycount}}</label></h1>
+        <br><input [(ngModel)]="toycount" type="range" min="1" max="100" class="form-range" id="customRange1">
+        <h1><p><label for="customRange1" class="form-label">Books: {{bookcount}}</label></h1>
+        <br><input [(ngModel)]="bookcount" type="range" min="1" max="100" class="form-range" id="customRange1">
     </div>
-      <h1>Total Gift Amount: {{total}}</h1>
-      <i class="payicon fa-brands fa-cc-paypal fa-2xl"></i>
-      &nbsp;<img class="venmo" src="../assets/venmo.ico" alt="">
-  </ng-template>
+    <div class="col-sm">
+      <p><p><h1>Total Gift Amount:</h1>
+        <h1>{{totalgiftlira | currency: 'TRY':'symbol-narrow':'0.0-0'}}
+          <p><p>
+          <button (click)="convertToUSD()">Convert to USD</button>
+          <p><p>
+          <p>{{totalgiftusd | currency: 'USD':'symbol-narrow':'0.0-0'}}</h1>
+        <i class="payicon fa-brands fa-cc-paypal fa-2xl"></i>
+        &nbsp;<img class="venmo" src="../assets/venmo.ico" alt="">
+        <google-pay-button
+        environment="TEST"
+        buttonType="long"
+        buttonLocale="en"
+        buttonSizeMode="fill"
+        style="width: 250px; height: 50px;"
+        [paymentRequest]="{
+          apiVersion: 2,
+          apiVersionMinor: 0,
+          allowedPaymentMethods: [
+            {
+              type: 'CARD',
+              parameters: {
+                allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD']
+              },
+              tokenizationSpecification: {
+                type: 'PAYMENT_GATEWAY',
+                parameters: {
+                  gateway: 'example',
+                  gatewayMerchantId: 'exampleGatewayMerchantId'
+                }
+              }
+            }
+          ],
+          merchantInfo: {
+            merchantId: '12345678901234567890',
+            merchantName: 'Demo Merchant'
+          },
+          transactionInfo: {
+            totalPriceStatus: 'FINAL',
+            totalPriceLabel: 'Total',
+            totalPrice: '100.00',
+            currencyCode: 'USD',
+            countryCode: 'US'
+          }
+        }"
+        (loadpaymentdata)="onLoadPaymentData($event)"
+      ></google-pay-button>
+      <p><p>
+    </div>
+  </div>
+</div>
+</ng-template>
 </div>

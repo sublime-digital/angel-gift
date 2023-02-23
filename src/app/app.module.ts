@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { GooglePayButtonModule } from '@google-pay/button-angular';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +22,7 @@ import { ShareComponent } from './share/share.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    GooglePayButtonModule,
     ],
   bootstrap: [AppComponent]
 })

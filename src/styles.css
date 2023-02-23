@@ -53,3 +53,12 @@ body {
 }
 
 /*** Color Changing Background Gradient ***/
+
+.gpay-card-info-container {
+  background-color: teal!important;
+}
+
+button {
+  background-color: #168A8C!important;
+  border: 3px solid white!important;
+}
